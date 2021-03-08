@@ -42,9 +42,12 @@ namespace TitlebarZ
             this.cbOption2 = new System.Windows.Forms.CheckBox();
             this.btnApply = new System.Windows.Forms.Button();
             this.colorPreview = new System.Windows.Forms.Panel();
+            this.lbColor = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.trbRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.trbGreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.trbBlue)).BeginInit();
+            this.colorPreview.SuspendLayout();
             this.SuspendLayout();
             // 
             // trbRed
@@ -142,9 +145,9 @@ namespace TitlebarZ
             // btnApply
             // 
             this.btnApply.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnApply.Location = new System.Drawing.Point(297, 201);
+            this.btnApply.Location = new System.Drawing.Point(307, 201);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(75, 23);
+            this.btnApply.Size = new System.Drawing.Size(65, 23);
             this.btnApply.TabIndex = 9;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
@@ -152,15 +155,39 @@ namespace TitlebarZ
             // colorPreview
             // 
             this.colorPreview.BackColor = System.Drawing.Color.White;
+            this.colorPreview.Controls.Add(this.lbColor);
             this.colorPreview.Location = new System.Drawing.Point(12, 201);
             this.colorPreview.Name = "colorPreview";
             this.colorPreview.Size = new System.Drawing.Size(76, 23);
             this.colorPreview.TabIndex = 10;
             // 
+            // lbColor
+            // 
+            this.lbColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbColor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbColor.Location = new System.Drawing.Point(0, 0);
+            this.lbColor.Name = "lbColor";
+            this.lbColor.Size = new System.Drawing.Size(76, 23);
+            this.lbColor.TabIndex = 0;
+            this.lbColor.Text = "#FFFFFF";
+            this.lbColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnReset.Location = new System.Drawing.Point(241, 201);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(60, 23);
+            this.btnReset.TabIndex = 11;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(384, 236);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.colorPreview);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.cbOption2);
@@ -172,8 +199,10 @@ namespace TitlebarZ
             this.Controls.Add(this.trbBlue);
             this.Controls.Add(this.trbGreen);
             this.Controls.Add(this.trbRed);
-            this.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Location = new System.Drawing.Point(15, 15);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(400, 275);
             this.MinimumSize = new System.Drawing.Size(400, 275);
@@ -182,9 +211,14 @@ namespace TitlebarZ
             ((System.ComponentModel.ISupportInitialize) (this.trbRed)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.trbGreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.trbBlue)).EndInit();
+            this.colorPreview.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label lbColor;
+
+        private System.Windows.Forms.Button btnReset;
 
         private System.Windows.Forms.Panel colorPreview;
 

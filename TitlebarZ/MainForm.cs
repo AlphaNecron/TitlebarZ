@@ -21,7 +21,8 @@ namespace TitlebarZ
             RegUtils.SetColorPrevalence(true);
             if (cbOption1.Checked) RegUtils.SetTitlebarColor(color);
             if (cbOption2.Checked) RegUtils.SetInactiveTitlebarColor(color);
-            MessageBox.Show($"New titlebar color has been set!\nNew color: #{color:X6}");
+            MessageBox.Show(
+                $"New titlebar color has been applied!\nNew color: #{BGR.StripAlpha(BGR.FromColor(_color).ToRGBHex()):X6}");
         }
 
         private void InitializeEvent()
@@ -30,6 +31,11 @@ namespace TitlebarZ
             trbGreen.ValueChanged += (i, _) => OnColorChanged(i);
             trbBlue.ValueChanged += (i, _) => OnColorChanged(i);
             btnApply.Click += (_, _) => Apply();
+            btnReset.Click += (_, _) =>
+            {
+                RegUtils.ResetCustomization();
+                MessageBox.Show(@"Titlebar color has been reset!");
+            };
         }
 
         private void OnColorChanged(object i)
@@ -48,8 +54,14 @@ namespace TitlebarZ
                     break;
             }
 
-            _color = Color.FromArgb(255, trbRed.Value, trbGreen.Value, trbBlue.Value);
+            _color = Color.FromArgb(trbRed.Value, trbGreen.Value, trbBlue.Value);
+            lbColor.ForeColor = _color.GetBrightness() >= 0.5F
+                ? Color.Black
+                : _color.GetBrightness() <= 0.5F
+                    ? Color.White
+                    : Color.Gray;
             colorPreview.BackColor = _color;
+            lbColor.Text = $"#{BGR.StripAlpha(BGR.FromColor(_color).ToRGBHex()):X6}";
         }
     }
 }

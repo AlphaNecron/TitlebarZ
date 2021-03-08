@@ -2,19 +2,9 @@
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net5.0-windows</TargetFramework>
         <UseWindowsForms>true</UseWindowsForms>
-        <PublishTrimmed>true</PublishTrimmed>
-        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-        <AssemblyName>TitlebarZ</AssemblyName>
-        <RootNamespace>TitlebarZ</RootNamespace>
-        <IsPackable>false</IsPackable>
-        <PackageId>TitlebarZ</PackageId>
-        <Authors>TitlebarZ</Authors>
-        <Company>TitlebarZ</Company>
-        <Product>TitlebarZ</Product>
-        <AssemblyVersion>1.0.1</AssemblyVersion>
-        <FileVersion>1.0.1</FileVersion>
+        <UseAppHost>True</UseAppHost>
+        <TargetFramework>net5.0-windows</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
@@ -22,5 +12,4 @@
             <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll</HintPath>
         </Reference>
     </ItemGroup>
-
 </Project>
