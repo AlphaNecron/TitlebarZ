@@ -13,6 +13,11 @@ nuget restore
 MSBuild.exe -property:Configuration=Release TitlebarZ.WPF.csproj
 ```
 
+## Resources and dependencies used
+- [HandyControls](https://github.com/ghost1372/HandyControls)  
+- [Icons](https://icons8.com/)
+- .NET Framework 4.8
+
 ### Prebuilt binaries: [TitlebarZ](https://github.com/AlphaNecron/TitlebarZ/releases/latest)
 
 ### Demo
