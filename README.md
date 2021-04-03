@@ -8,9 +8,9 @@ A simple titlebar customizer for Windows 10.
 ## Building from source
 ```
 git clone https://github.com/AlphaNecron/TitlebarZ.git
-cd TitlebarZ.WPF
+cd TitlebarZ/TitlebarZ.WPF
 nuget restore
-MSBuild.exe -property:Configuration=Release TitlebarZ.WPF.csproj
+msbuild.exe -property:Configuration=Release TitlebarZ.WPF.csproj
 ```
 
 ## Resources and dependencies used
