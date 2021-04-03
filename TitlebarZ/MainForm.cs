@@ -27,9 +27,9 @@ namespace TitlebarZ
 
         private void InitializeEvent()
         {
-            trbRed.ValueChanged += (i, _) => OnColorChanged(i);
-            trbGreen.ValueChanged += (i, _) => OnColorChanged(i);
-            trbBlue.ValueChanged += (i, _) => OnColorChanged(i);
+            trbRed.ValueChanged += (i, _) => OnColorChanged((TrackBar) i);
+            trbGreen.ValueChanged += (i, _) => OnColorChanged((TrackBar) i);
+            trbBlue.ValueChanged += (i, _) => OnColorChanged((TrackBar) i);
             btnApply.Click += (_, _) => Apply();
             btnReset.Click += (_, _) =>
             {
@@ -38,19 +38,18 @@ namespace TitlebarZ
             };
         }
 
-        private void OnColorChanged(object i)
+        private void OnColorChanged(TrackBar i)
         {
-            var sender = i as TrackBar;
-            switch (sender?.Name)
+            switch (i.Name)
             {
                 case "trbRed":
-                    lbRed.Text = $@"R: {sender.Value}";
+                    lbRed.Text = $@"R: {i.Value}";
                     break;
                 case "trbGreen":
-                    lbGreen.Text = $@"G: {sender.Value}";
+                    lbGreen.Text = $@"G: {i.Value}";
                     break;
                 case "trbBlue":
-                    lbBlue.Text = $@"B: {sender.Value}";
+                    lbBlue.Text = $@"B: {i.Value}";
                     break;
             }
 
@@ -61,7 +60,7 @@ namespace TitlebarZ
                     ? Color.White
                     : Color.Gray;
             colorPreview.BackColor = _color;
-            lbColor.Text = $"#{BGR.StripAlpha(BGR.FromColor(_color).ToRGBHex()):X6}";
+            lbColor.Text = $@"#{BGR.StripAlpha(BGR.FromColor(_color).ToRGBHex()):X6}";
         }
     }
 }

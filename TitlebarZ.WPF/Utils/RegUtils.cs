@@ -1,22 +1,23 @@
 ﻿using Microsoft.Win32;
 
-namespace TitlebarZ.Utils
+namespace TitlebarZ.WPF.Utils
 {
-    class RegUtils
+    internal class RegUtils
     {
-        private const string KeyPath = @"HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\DWM";
-        private static readonly RegistryKey DwmRegKey = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\DWM");
         private const int Color = 0x1;
         private const int Reset = 0x0;
 
-        internal static void SetTitlebarColor(object hex)
+        private static readonly RegistryKey DwmRegKey =
+            Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\DWM", true);
+
+        internal static void SetTitlebarColor(int hex)
         {
             DwmRegKey.SetValue("AccentColor", hex, RegistryValueKind.DWord);
         }
 
-        internal static void SetInactiveTitlebarColor(object hex)
+        internal static void SetInactiveTitlebarColor(int hex)
         {
-            DwmRegKey.SetValue("AccentColorInactive", hex, RegistryValueKind.DWord);
+            DwmRegKey.SetValue("AccentColorInactive", int.Parse(hex.ToString()), RegistryValueKind.DWord);
         }
 
         internal static void ResetCustomization()
@@ -33,4 +34,3 @@ namespace TitlebarZ.Utils
         }
     }
 }
-

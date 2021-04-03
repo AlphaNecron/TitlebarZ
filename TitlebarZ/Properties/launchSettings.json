@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TitlebarZ": {
+      "commandName": "Project"
+    },
+    "TitlebarZ.WPF": {
+      "commandName": "Project"
+    }
+  }
+}
