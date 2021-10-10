@@ -1,5 +1,5 @@
 # TitlebarZ
-A simple titlebar customizer for Windows 10.  
+A simple titlebar customizer for Windows 10 (and 11).  
 
 [![](https://img.shields.io/github/v/release/AlphaNecron/TitlebarZ?label=Latest&style=for-the-badge)](#)
 [![](https://img.shields.io/github/downloads/AlphaNecron/TitlebarZ/total?style=for-the-badge)](#)
