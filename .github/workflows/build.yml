@@ -15,12 +15,12 @@ jobs:
           uses: microsoft/setup-msbuild@v1.0.2
         - name: Restore NuGet
           run: nuget restore TitlebarZ.sln
-        - name: Change CWD to TitlebarZ.WPF
-          run: cd TitlebarZ.WPF
         - name: Run MSBuild
-          run: msbuild TitlebarZ.WPF.csproj /p:Configuration=Release
+          run: |
+            cd TitlebarZ.WPF
+            msbuild TitlebarZ.WPF.csproj /p:Configuration=Release
         - name: Create release
           uses: ncipollo/release-action@v1.8.10
           with:
-            artifacts: "bin/Release/TitlebarZ.exe"
+            artifacts: "TitlebarZ.WPF/bin/Release/TitlebarZ.exe"
             token: ${{ secrets.GITHUB_TOKEN }}
